@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "calculadora": "cpp",
+        "iostream": "cpp"
+    }
+}
