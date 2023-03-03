@@ -1,0 +1,115 @@
+#include <iostream>
+
+using namespace std;
+
+//Declaracion de funciones
+void Suma(float n1,float n2);
+void Resta(float n1,float n2);
+void Multi(float n1,float n2);
+void Division(float n1, float n2);
+
+//Funcion principal
+int main(){
+    int opc;
+    float num1,num2;  //Creo que con esas 2 variables deberia ser suficiente para las funciones,pero si necesitan crear las ponen 
+
+do{
+//Menu de la calculadora 
+cout<<"Calculadora basica"<<endl;
+cout<<"Seleccione una opcion del menu"<<endl;
+cout<<"1)Suma"<<endl;
+cout<<"2)Resta"<<endl;
+cout<<"3)Multiplicacion"<<endl;
+cout<<"4)Division"<<endl;
+cout<<"5)Salir"<<endl;
+cin>>opc;
+switch(opc){
+    case 1:
+        cout<<"Ingrese dos numeros: "<<endl;
+        cin>>num1;
+        cout<<"+";
+        cin>>num2;
+        Suma(num1,num2);
+    break;
+
+    case 2:
+        cout<<"Ingrese dos numeros: "<<endl;
+        cin>>num1;
+        cout<<"-";
+        cin>>num2;
+        Resta(num1,num2);
+    break;
+    
+    case 3:
+        cout<<"Ingrese dos numero: "<<endl;
+        cin>>num1;
+        cout<<" * ";
+        cin>>num2;
+        Multi(num1,num2);
+    break;
+    
+    case 4:
+        cout<<"Ingrese dos numeros: "<<endl;
+        cin>>num1;
+        cout<<" / ";
+        cin>>num2;
+        Division(num1,num2);
+
+    break;
+}
+
+}while(opc!=5);
+}
+
+//Funciones
+
+//Suma
+void Suma(float n1,float n2){
+    float sum;
+    sum=n1+n2;
+    cout<<"Resultado de la suma: "<<sum<<endl;
+}
+
+//Resta
+void Resta(float n1,float n2){
+    float res;
+    res=n1-n2;
+    cout<<"Resultado de la resta: "<<res<<endl;
+}
+
+//Multiplicacion
+void Multi(float n1,float n2){
+    float mult;
+    mult=n1*n2;
+    cout<<"Resultado de la multiplicacion: "<<mult<<endl;
+}
+
+//Division
+void Division(float n1, float n2){
+    float div;
+    div=n1/n2;
+    cout<<"Resultado de la division: "<<div<<endl;
+}
+
+/*
+//Amogus
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣠⣤⣤⣤⣄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⠟⠋⠉⠉⠉⠉⠉⠙⠻⣶⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣼⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣸⡟⠀⠀⠀⢀⣴⣶⠿⠿⠿⠟⠛⠛⠛⠻⢿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢀⣿⠁⠀⠀⠀⣼⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⣠⣤⣶⡾⣾⡏⠀⠀⠀⠀⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⢸⡿⠋⠀⠀⣾⡇⠀⠀⠀⠀⢿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣾⠇⡀⠀⠀⣿⠁⠀⠀⠀⠀⠘⢿⣦⣤⣤⣤⣤⣤⣤⣤⣤⣶⢿⣟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣿⠀⠀⠀⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⠀⠀⠀⢸⡟⠀⠀⠀⠀⠀⠀⠀⣀⣠⣤⣤⣤⣤⣤⣤⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣿⠀⠀⠀⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀⠀⠀⣠⡾⠋⠉⠀⠀⠀⠀⠀⠀⠈⠉⠙⠳⣦⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣿⠀⠀⠀⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡇⠀⠀⠀⠀⠀⣿⠀⠀⣀⣀⣤⣤⣄⣀⣀⠀⠀⠀⠀⠈⣻⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⢿⡇⠀⠀⠀⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠇⠀⠀⠀⠀⢀⣿⠾⢟⣉⣁⣤⣤⣄⣉⡉⠛⢶⣴⡶⠟⠛⠛⠶⣤⡀⠀⠀⠀⠀⠀
+⠸⣷⡄⠀⠀⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⠀⠀⣴⠟⣧⡾⠛⠉⢉⣀⡀⠉⠉⠙⠳⣦⣌⠻⣦⡀⠀⠀⠈⠿⠞⠛⠻⣦⠀
+⠀⠙⠿⠿⠶⣿⡇⠀⠀⠀⠀⠀⠀⣤⣤⣄⣀⣀⣠⣤⠆⠀⢸⡿⠀⠀⠀⣼⡿⠿⠿⣶⠶⠛⠋⠉⣿⡄⠀⠀⠀⠀⠙⣧⠈⢷⡄⠀⠀⠀⠀⠀⠀⢹⡆
+⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀⠀⠀⠀⣿⡅⠉⢹⣿⠁⠀⠀⠀⢸⡇⠀⠀⠀⣿⠀⠀⣴⠗⠀⠐⠶⣴⠟⠁⠀⠀⠀⠀⠀⣼⠃⢸⡇⠀⢀⡤⠀⢀⣠⡿⠀
+⠀⠀⠀⠀⠀⢸⣧⠀⠀⠀⠀⠀⠀⣿⠇⠀⠸⣿⡀⠀⠀⠀⣼⠁⠀⣀⣤⣽⡷⢶⣯⠀⠀⠀⠀⣹⠀⠀⠀⢀⣠⣴⠞⠋⢀⣾⢃⣴⠿⣷⠛⠋⠉⠀⠀
+⠀⠀⠀⠀⠀⠈⢿⣦⣤⣀⣀⣤⣾⠟⠀⠀⠀⠙⠛⠿⠿⠟⣫⡶⠟⠉⠁⠀⠀⠀⠙⠷⠦⢤⣶⣟⣛⡛⠛⠋⣉⣀⣤⣴⡿⠟⠋⣡⣼⠋⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⢧⣤⣀⣀⣀⣀⣀⣤⣤⣬⣧⠀⠀⠉⠉⠉⠉⠉⠉⢉⣡⣤⡴⠶⠛⠋⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠀⠀⠀⠀⠸⣷⣶⡶⠶⠶⠶⠖⠛⠛⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+*/
